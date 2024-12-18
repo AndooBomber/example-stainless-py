@@ -1,6 +1,6 @@
 # Petstore Python API library
 
-[![PyPI version](https://img.shields.io/pypi/v/example_stainless.svg)](https://pypi.org/project/example_stainless/)
+[![PyPI version](https://img.shields.io/pypi/v/fuando_example_stainless.svg)](https://pypi.org/project/fuando_example_stainless/)
 
 The Petstore Python library provides convenient access to the Petstore REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -15,12 +15,9 @@ The REST API documentation can be found on [app.stainlessapi.com](https://app.st
 ## Installation
 
 ```sh
-# install from the production repo
-pip install git+ssh://git@github.com/AndooBomber/example-stainless-py.git
+# install from PyPI
+pip install --pre fuando_example_stainless
 ```
-
-> [!NOTE]
-> Once this package is [published to PyPI](https://app.stainlessapi.com/docs/guides/publish), this will become: `pip install --pre example_stainless`
 
 ## Usage
 
