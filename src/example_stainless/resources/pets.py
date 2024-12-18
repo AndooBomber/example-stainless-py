@@ -65,6 +65,7 @@ class PetsResource(SyncAPIResource):
         photo_urls: List[str],
         id: int | NotGiven = NOT_GIVEN,
         category: CategoryParam | NotGiven = NOT_GIVEN,
+        first: str | NotGiven = NOT_GIVEN,
         status: Literal["available", "pending", "sold"] | NotGiven = NOT_GIVEN,
         tags: Iterable[pet_create_params.Tag] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -96,6 +97,7 @@ class PetsResource(SyncAPIResource):
                     "photo_urls": photo_urls,
                     "id": id,
                     "category": category,
+                    "first": first,
                     "status": status,
                     "tags": tags,
                 },
@@ -145,6 +147,7 @@ class PetsResource(SyncAPIResource):
         photo_urls: List[str],
         id: int | NotGiven = NOT_GIVEN,
         category: CategoryParam | NotGiven = NOT_GIVEN,
+        first: str | NotGiven = NOT_GIVEN,
         status: Literal["available", "pending", "sold"] | NotGiven = NOT_GIVEN,
         tags: Iterable[pet_update_params.Tag] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -176,6 +179,7 @@ class PetsResource(SyncAPIResource):
                     "photo_urls": photo_urls,
                     "id": id,
                     "category": category,
+                    "first": first,
                     "status": status,
                     "tags": tags,
                 },
@@ -413,6 +417,7 @@ class AsyncPetsResource(AsyncAPIResource):
         photo_urls: List[str],
         id: int | NotGiven = NOT_GIVEN,
         category: CategoryParam | NotGiven = NOT_GIVEN,
+        first: str | NotGiven = NOT_GIVEN,
         status: Literal["available", "pending", "sold"] | NotGiven = NOT_GIVEN,
         tags: Iterable[pet_create_params.Tag] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -444,6 +449,7 @@ class AsyncPetsResource(AsyncAPIResource):
                     "photo_urls": photo_urls,
                     "id": id,
                     "category": category,
+                    "first": first,
                     "status": status,
                     "tags": tags,
                 },
@@ -493,6 +499,7 @@ class AsyncPetsResource(AsyncAPIResource):
         photo_urls: List[str],
         id: int | NotGiven = NOT_GIVEN,
         category: CategoryParam | NotGiven = NOT_GIVEN,
+        first: str | NotGiven = NOT_GIVEN,
         status: Literal["available", "pending", "sold"] | NotGiven = NOT_GIVEN,
         tags: Iterable[pet_update_params.Tag] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
@@ -524,6 +531,7 @@ class AsyncPetsResource(AsyncAPIResource):
                     "photo_urls": photo_urls,
                     "id": id,
                     "category": category,
+                    "first": first,
                     "status": status,
                     "tags": tags,
                 },
