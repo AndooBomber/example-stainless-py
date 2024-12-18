@@ -28,6 +28,7 @@ class TestUser:
     def test_method_create_with_all_params(self, client: Petstore) -> None:
         user = client.user.create(
             id=10,
+            age=20,
             email="john@email.com",
             first_name="John",
             last_name="James",
@@ -108,6 +109,7 @@ class TestUser:
         user = client.user.update(
             existing_username="username",
             id=10,
+            age=20,
             email="john@email.com",
             first_name="John",
             last_name="James",
@@ -290,6 +292,7 @@ class TestAsyncUser:
     async def test_method_create_with_all_params(self, async_client: AsyncPetstore) -> None:
         user = await async_client.user.create(
             id=10,
+            age=20,
             email="john@email.com",
             first_name="John",
             last_name="James",
@@ -370,6 +373,7 @@ class TestAsyncUser:
         user = await async_client.user.update(
             existing_username="username",
             id=10,
+            age=20,
             email="john@email.com",
             first_name="John",
             last_name="James",

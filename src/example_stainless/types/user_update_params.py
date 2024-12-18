@@ -12,6 +12,8 @@ __all__ = ["UserUpdateParams"]
 class UserUpdateParams(TypedDict, total=False):
     id: int
 
+    age: int
+
     email: str
 
     first_name: Annotated[str, PropertyInfo(alias="firstName")]
