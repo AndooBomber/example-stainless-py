@@ -20,6 +20,8 @@ class PetCreateParams(TypedDict, total=False):
 
     category: CategoryParam
 
+    first: str
+
     status: Literal["available", "pending", "sold"]
     """pet status in the store"""
 

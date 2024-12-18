@@ -40,6 +40,7 @@ class TestPets:
                 "id": 1,
                 "name": "Dogs",
             },
+            first="dogger",
             status="available",
             tags=[
                 {
@@ -125,6 +126,7 @@ class TestPets:
                 "id": 1,
                 "name": "Dogs",
             },
+            first="dogger",
             status="available",
             tags=[
                 {
@@ -361,6 +363,7 @@ class TestAsyncPets:
                 "id": 1,
                 "name": "Dogs",
             },
+            first="dogger",
             status="available",
             tags=[
                 {
@@ -446,6 +449,7 @@ class TestAsyncPets:
                 "id": 1,
                 "name": "Dogs",
             },
+            first="dogger",
             status="available",
             tags=[
                 {
