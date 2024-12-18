@@ -12,6 +12,8 @@ __all__ = ["User"]
 class User(BaseModel):
     id: Optional[int] = None
 
+    age: Optional[int] = None
+
     email: Optional[str] = None
 
     first_name: Optional[str] = FieldInfo(alias="firstName", default=None)

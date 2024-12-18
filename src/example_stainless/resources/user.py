@@ -55,6 +55,7 @@ class UserResource(SyncAPIResource):
         self,
         *,
         id: int | NotGiven = NOT_GIVEN,
+        age: int | NotGiven = NOT_GIVEN,
         email: str | NotGiven = NOT_GIVEN,
         first_name: str | NotGiven = NOT_GIVEN,
         last_name: str | NotGiven = NOT_GIVEN,
@@ -88,6 +89,7 @@ class UserResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "id": id,
+                    "age": age,
                     "email": email,
                     "first_name": first_name,
                     "last_name": last_name,
@@ -142,6 +144,7 @@ class UserResource(SyncAPIResource):
         existing_username: str,
         *,
         id: int | NotGiven = NOT_GIVEN,
+        age: int | NotGiven = NOT_GIVEN,
         email: str | NotGiven = NOT_GIVEN,
         first_name: str | NotGiven = NOT_GIVEN,
         last_name: str | NotGiven = NOT_GIVEN,
@@ -178,6 +181,7 @@ class UserResource(SyncAPIResource):
             body=maybe_transform(
                 {
                     "id": id,
+                    "age": age,
                     "email": email,
                     "first_name": first_name,
                     "last_name": last_name,
@@ -351,6 +355,7 @@ class AsyncUserResource(AsyncAPIResource):
         self,
         *,
         id: int | NotGiven = NOT_GIVEN,
+        age: int | NotGiven = NOT_GIVEN,
         email: str | NotGiven = NOT_GIVEN,
         first_name: str | NotGiven = NOT_GIVEN,
         last_name: str | NotGiven = NOT_GIVEN,
@@ -384,6 +389,7 @@ class AsyncUserResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "id": id,
+                    "age": age,
                     "email": email,
                     "first_name": first_name,
                     "last_name": last_name,
@@ -438,6 +444,7 @@ class AsyncUserResource(AsyncAPIResource):
         existing_username: str,
         *,
         id: int | NotGiven = NOT_GIVEN,
+        age: int | NotGiven = NOT_GIVEN,
         email: str | NotGiven = NOT_GIVEN,
         first_name: str | NotGiven = NOT_GIVEN,
         last_name: str | NotGiven = NOT_GIVEN,
@@ -474,6 +481,7 @@ class AsyncUserResource(AsyncAPIResource):
             body=await async_maybe_transform(
                 {
                     "id": id,
+                    "age": age,
                     "email": email,
                     "first_name": first_name,
                     "last_name": last_name,
