@@ -26,6 +26,8 @@ class Pet(BaseModel):
 
     category: Optional[Category] = None
 
+    first: Optional[str] = None
+
     status: Optional[Literal["available", "pending", "sold"]] = None
     """pet status in the store"""
 
