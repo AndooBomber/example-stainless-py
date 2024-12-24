@@ -18,6 +18,8 @@ class UserUpdateParams(TypedDict, total=False):
 
     first_name: Annotated[str, PropertyInfo(alias="firstName")]
 
+    full_name: Annotated[str, PropertyInfo(alias="fullName")]
+
     last_name: Annotated[str, PropertyInfo(alias="lastName")]
 
     password: str
