@@ -18,6 +18,8 @@ class User(BaseModel):
 
     first_name: Optional[str] = FieldInfo(alias="firstName", default=None)
 
+    full_name: Optional[str] = FieldInfo(alias="fullName", default=None)
+
     last_name: Optional[str] = FieldInfo(alias="lastName", default=None)
 
     password: Optional[str] = None
