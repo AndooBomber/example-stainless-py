@@ -19,10 +19,7 @@ from ._types import (
     ProxiesTypes,
     RequestOptions,
 )
-from ._utils import (
-    is_given,
-    get_async_library,
-)
+from ._utils import is_given, get_async_library
 from ._version import __version__
 from .resources import pets, user
 from ._streaming import Stream as Stream, AsyncStream as AsyncStream
@@ -79,7 +76,7 @@ class Petstore(SyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new synchronous petstore client instance.
+        """Construct a new synchronous Petstore client instance.
 
         This automatically infers the `api_key` argument from the `PETSTORE_API_KEY` environment variable if it is not provided.
         """
@@ -251,7 +248,7 @@ class AsyncPetstore(AsyncAPIClient):
         # part of our public interface in the future.
         _strict_response_validation: bool = False,
     ) -> None:
-        """Construct a new async petstore client instance.
+        """Construct a new async AsyncPetstore client instance.
 
         This automatically infers the `api_key` argument from the `PETSTORE_API_KEY` environment variable if it is not provided.
         """

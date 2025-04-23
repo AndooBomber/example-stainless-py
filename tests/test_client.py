@@ -1595,7 +1595,7 @@ class TestAsyncPetstore:
         import threading
 
         from example_stainless._utils import asyncify
-        from example_stainless._base_client import get_platform 
+        from example_stainless._base_client import get_platform
 
         async def test_main() -> None:
             result = await asyncify(get_platform)()
