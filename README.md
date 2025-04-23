@@ -6,7 +6,7 @@ The Petstore Python library provides convenient access to the Petstore REST API 
 application. The library includes type definitions for all request params and response fields,
 and offers both synchronous and asynchronous clients powered by [httpx](https://github.com/encode/httpx).
 
-It is generated with [Stainless](https://www.stainlessapi.com/).
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Documentation
 
@@ -80,6 +80,26 @@ Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typ
 - Converting to a dictionary, `model.to_dict()`
 
 Typed requests and responses provide autocomplete and documentation within your editor. If you would like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
+
+## Nested params
+
+Nested parameters are dictionaries, typed using `TypedDict`, for example:
+
+```python
+from example_stainless import Petstore
+
+client = Petstore()
+
+pet = client.pets.create(
+    name="doggie",
+    photo_urls=["string"],
+    category={
+        "id": 1,
+        "name": "Dogs",
+    },
+)
+print(pet.category)
+```
 
 ## Handling errors
 

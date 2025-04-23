@@ -32,7 +32,7 @@ class TestStore:
             pet_id=198772,
             quantity=7,
             ship_date=parse_datetime("2019-12-27T18:11:19.117Z"),
-            status="placed",
+            status="approved",
         )
         assert_matches_type(Order, store, path=["response"])
 
@@ -98,7 +98,7 @@ class TestAsyncStore:
             pet_id=198772,
             quantity=7,
             ship_date=parse_datetime("2019-12-27T18:11:19.117Z"),
-            status="placed",
+            status="approved",
         )
         assert_matches_type(Order, store, path=["response"])
 
