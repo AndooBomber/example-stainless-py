@@ -6,16 +6,9 @@ from typing import Iterable
 
 import httpx
 
-from ..types import (
-    user_login_params,
-    user_create_params,
-    user_update_params,
-)
+from ..types import user_login_params, user_create_params, user_update_params
 from .._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven
-from .._utils import (
-    maybe_transform,
-    async_maybe_transform,
-)
+from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -35,7 +28,7 @@ class UserResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> UserResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/AndooBomber/example-stainless-py#accessing-raw-response-data-eg-headers
@@ -239,7 +232,7 @@ class UserResource(SyncAPIResource):
     def create_with_list(
         self,
         *,
-        items: Iterable[UserParam],
+        items: Iterable[UserParam] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -339,7 +332,7 @@ class AsyncUserResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncUserResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/AndooBomber/example-stainless-py#accessing-raw-response-data-eg-headers
@@ -543,7 +536,7 @@ class AsyncUserResource(AsyncAPIResource):
     async def create_with_list(
         self,
         *,
-        items: Iterable[UserParam],
+        items: Iterable[UserParam] | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,

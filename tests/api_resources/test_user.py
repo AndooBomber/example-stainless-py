@@ -151,7 +151,6 @@ class TestUser:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `existing_username` but received ''"):
             client.user.with_raw_response.update(
                 existing_username="",
-                username="",
             )
 
     @parametrize
@@ -194,16 +193,32 @@ class TestUser:
 
     @parametrize
     def test_method_create_with_list(self, client: Petstore) -> None:
+        user = client.user.create_with_list()
+        assert_matches_type(User, user, path=["response"])
+
+    @parametrize
+    def test_method_create_with_list_with_all_params(self, client: Petstore) -> None:
         user = client.user.create_with_list(
-            items=[{}],
+            items=[
+                {
+                    "id": 10,
+                    "age": 20,
+                    "email": "john@email.com",
+                    "first_name": "John",
+                    "full_name": "John James",
+                    "last_name": "James",
+                    "password": "12345",
+                    "phone": "12345",
+                    "username": "theUser",
+                    "user_status": 1,
+                }
+            ],
         )
         assert_matches_type(User, user, path=["response"])
 
     @parametrize
     def test_raw_response_create_with_list(self, client: Petstore) -> None:
-        response = client.user.with_raw_response.create_with_list(
-            items=[{}],
-        )
+        response = client.user.with_raw_response.create_with_list()
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -212,9 +227,7 @@ class TestUser:
 
     @parametrize
     def test_streaming_response_create_with_list(self, client: Petstore) -> None:
-        with client.user.with_streaming_response.create_with_list(
-            items=[{}],
-        ) as response:
+        with client.user.with_streaming_response.create_with_list() as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 
@@ -417,7 +430,6 @@ class TestAsyncUser:
         with pytest.raises(ValueError, match=r"Expected a non-empty value for `existing_username` but received ''"):
             await async_client.user.with_raw_response.update(
                 existing_username="",
-                username="",
             )
 
     @parametrize
@@ -460,16 +472,32 @@ class TestAsyncUser:
 
     @parametrize
     async def test_method_create_with_list(self, async_client: AsyncPetstore) -> None:
+        user = await async_client.user.create_with_list()
+        assert_matches_type(User, user, path=["response"])
+
+    @parametrize
+    async def test_method_create_with_list_with_all_params(self, async_client: AsyncPetstore) -> None:
         user = await async_client.user.create_with_list(
-            items=[{}],
+            items=[
+                {
+                    "id": 10,
+                    "age": 20,
+                    "email": "john@email.com",
+                    "first_name": "John",
+                    "full_name": "John James",
+                    "last_name": "James",
+                    "password": "12345",
+                    "phone": "12345",
+                    "username": "theUser",
+                    "user_status": 1,
+                }
+            ],
         )
         assert_matches_type(User, user, path=["response"])
 
     @parametrize
     async def test_raw_response_create_with_list(self, async_client: AsyncPetstore) -> None:
-        response = await async_client.user.with_raw_response.create_with_list(
-            items=[{}],
-        )
+        response = await async_client.user.with_raw_response.create_with_list()
 
         assert response.is_closed is True
         assert response.http_request.headers.get("X-Stainless-Lang") == "python"
@@ -478,9 +506,7 @@ class TestAsyncUser:
 
     @parametrize
     async def test_streaming_response_create_with_list(self, async_client: AsyncPetstore) -> None:
-        async with async_client.user.with_streaming_response.create_with_list(
-            items=[{}],
-        ) as response:
+        async with async_client.user.with_streaming_response.create_with_list() as response:
             assert not response.is_closed
             assert response.http_request.headers.get("X-Stainless-Lang") == "python"
 

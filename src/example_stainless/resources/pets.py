@@ -16,10 +16,7 @@ from ..types import (
     pet_find_by_status_params,
 )
 from .._types import NOT_GIVEN, Body, Query, Headers, NoneType, NotGiven, FileTypes
-from .._utils import (
-    maybe_transform,
-    async_maybe_transform,
-)
+from .._utils import maybe_transform, async_maybe_transform
 from .._compat import cached_property
 from .._resource import SyncAPIResource, AsyncAPIResource
 from .._response import (
@@ -42,7 +39,7 @@ class PetsResource(SyncAPIResource):
     @cached_property
     def with_raw_response(self) -> PetsResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/AndooBomber/example-stainless-py#accessing-raw-response-data-eg-headers
@@ -351,8 +348,8 @@ class PetsResource(SyncAPIResource):
         self,
         pet_id: int,
         *,
-        image: FileTypes,
         additional_metadata: str | NotGiven = NOT_GIVEN,
+        image: FileTypes | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
@@ -394,7 +391,7 @@ class AsyncPetsResource(AsyncAPIResource):
     @cached_property
     def with_raw_response(self) -> AsyncPetsResourceWithRawResponse:
         """
-        This property can be used as a prefix for any HTTP method call to return the
+        This property can be used as a prefix for any HTTP method call to return
         the raw response object instead of the parsed content.
 
         For more information, see https://www.github.com/AndooBomber/example-stainless-py#accessing-raw-response-data-eg-headers
@@ -703,8 +700,8 @@ class AsyncPetsResource(AsyncAPIResource):
         self,
         pet_id: int,
         *,
-        image: FileTypes,
         additional_metadata: str | NotGiven = NOT_GIVEN,
+        image: FileTypes | NotGiven = NOT_GIVEN,
         # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
         # The extra values given here take precedence over values defined on the client or passed to this method.
         extra_headers: Headers | None = None,
